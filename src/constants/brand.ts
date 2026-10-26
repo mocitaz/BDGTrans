@@ -1,5 +1,6 @@
 export const brand = {
   name: "BDG TRANS",
+  instagram: "https://www.instagram.com/sewahiacebandung.id_/",
   whatsapp: "6289528051760",
   phone: "+6289528051760",
   phoneDisplay: "+62 895-2805-1760",

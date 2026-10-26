@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { ArrowUpRight, MapPin, MessageCircle, Phone } from "lucide-react";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 import { BrandLogo } from "./brand-logo";
 import { navigation } from "@/constants/navigation";
 import { brand } from "@/constants/brand";
 import { adminChat } from "@/lib/whatsapp";
-
-const googleMapsUrl =
-  "https://www.google.com/maps/place/Sewa+Hiace+Bandung+-+Bandung+Trip+Rent+Car/@-6.858063,107.5957184,17z/data=!3m1!4b1!4m6!3m5!1s0xaf58858c3aa1a6f:0x5b0b0b1dfba699a9!8m2!3d-6.858063!4d107.5957184!16s%2Fg%2F11xgd8krzx?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D";
 
 const googleMapsEmbedUrl =
   "https://maps.google.com/maps?q=-6.858063,107.5957184+(BDG+TRANS+-+Sewa+Hiace+Bandung)&hl=id&z=15&output=embed";
@@ -27,6 +25,64 @@ export function Footer() {
             <p>
               Hiace, Elf &amp; MPV untuk perjalanan dari dan menuju Bandung.
             </p>
+            <div
+              className="footer-socials"
+              role="group"
+              aria-label="Kontak dan media sosial"
+            >
+              <a
+                className="footer-social footer-instagram"
+                href={brand.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram BDG TRANS (membuka tab baru)"
+                title="Instagram"
+              >
+                <svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </a>
+              <a
+                className="footer-social footer-phone"
+                href={`tel:${brand.phone}`}
+                aria-label="Telepon admin BDG TRANS"
+                title="Telepon admin"
+              >
+                <Phone size={20} strokeWidth={1.6} aria-hidden="true" />
+              </a>
+              <a
+                className="footer-social footer-whatsapp"
+                href={adminChat}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat admin BDG TRANS melalui WhatsApp (membuka tab baru)"
+                title="WhatsApp admin"
+              >
+                <Image
+                  src="/icons/whatsapp.svg"
+                  alt="WhatsApp"
+                  width={21}
+                  height={21}
+                  unoptimized
+                />
+              </a>
+            </div>
           </div>
 
           <div className="footer-navigation">
@@ -41,52 +97,17 @@ export function Footer() {
           </div>
 
           <div className="footer-support">
-            <div className="footer-contact">
-              <h3 className="footer-heading">Hubungi admin</h3>
-              <div className="footer-contact-links">
-                <a href={adminChat} className="footer-whatsapp">
-                  <MessageCircle size={18} aria-hidden="true" />
-                  <span>
-                    <span className="footer-contact-label">Chat WhatsApp</span>
-                    <span className="footer-contact-value">
-                      {brand.phoneDisplay}
-                    </span>
-                  </span>
-                  <ArrowUpRight size={15} aria-hidden="true" />
-                </a>
-                <a className="footer-phone" href={`tel:${brand.phone}`}>
-                  <Phone size={16} aria-hidden="true" />
-                  Telepon admin
-                </a>
-              </div>
-            </div>
-
             <div className="footer-location">
-              <a
-                href={googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-location-link"
-                aria-label="Lihat lokasi di Google Maps untuk BDG TRANS (membuka tab baru)"
-                title="Buka di Google Maps"
-              >
-                <MapPin size={17} aria-hidden="true" />
-                Lihat lokasi di Google Maps
-                <ArrowUpRight size={14} aria-hidden="true" />
-              </a>
-              <details className="footer-map-details">
-                <summary>Pratinjau peta</summary>
-                <iframe
-                  src={googleMapsEmbedUrl}
-                  width="100%"
-                  height="130"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Peta Lokasi Sewa Hiace Bandung - BDG TRANS"
-                  className="footer-map-frame"
-                />
-              </details>
+              <iframe
+                src={googleMapsEmbedUrl}
+                width="100%"
+                height="130"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Peta Lokasi Sewa Hiace Bandung - BDG TRANS"
+                className="footer-map-frame"
+              />
             </div>
           </div>
         </div>

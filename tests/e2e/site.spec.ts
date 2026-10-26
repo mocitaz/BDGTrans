@@ -99,7 +99,7 @@ test("landing motion reveals once without running text and respects reduced moti
       .evaluate((el) => el.getAnimations().length),
   ).toBe(0);
 });
-test("footer keeps contact, navigation and optional map usable on phones and desktop", async ({
+test("footer keeps icon contacts, navigation and visible map usable on phones and desktop", async ({
   page,
 }) => {
   await page.goto("/armada/show");
@@ -107,15 +107,12 @@ test("footer keeps contact, navigation and optional map usable on phones and des
   for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await footer.scrollIntoViewIfNeeded();
-    await expect(footer.locator(".footer-map-details")).not.toHaveAttribute(
-      "open",
-      "",
-    );
-    await expect(footer.locator(".footer-map-frame")).toBeHidden();
+    await expect(footer.locator(".footer-map-frame")).toBeVisible();
+    await expect(
+      footer.locator(".footer-location-link, .footer-map-details"),
+    ).toHaveCount(0);
     for (const link of await footer
-      .locator(
-        ".footer-links a, .footer-whatsapp, .footer-phone, .footer-legal a, .footer-location-link",
-      )
+      .locator(".footer-links a, .footer-social, .footer-legal a")
       .all()) {
       const bounds = await link.boundingBox();
       expect(bounds!.height).toBeGreaterThanOrEqual(44);
@@ -123,12 +120,15 @@ test("footer keeps contact, navigation and optional map usable on phones and des
       expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(width);
     }
   }
-  const summary = footer.getByText("Pratinjau peta", { exact: true });
-  await summary.focus();
-  await page.keyboard.press("Enter");
-  await expect(footer.locator(".footer-map-frame")).toBeVisible();
-  await page.keyboard.press("Enter");
-  await expect(footer.locator(".footer-map-frame")).toBeHidden();
+  await expect(footer.locator(".footer-social")).toHaveCount(3);
+  await expect(footer.locator(".footer-instagram")).toHaveAttribute(
+    "href",
+    "https://www.instagram.com/sewahiacebandung.id_/",
+  );
+  for (const icon of await footer.locator(".footer-social").all()) {
+    await expect(icon).toHaveAttribute("aria-label", /.+/);
+    expect((await icon.innerText()).trim()).toBe("");
+  }
   await expect(footer.locator(".footer-whatsapp")).toHaveAttribute(
     "href",
     /wa\.me\/6289528051760/,

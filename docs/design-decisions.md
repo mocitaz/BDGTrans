@@ -183,3 +183,7 @@ The advisor prevents portal form submission from bubbling into the main form and
 ## Denah kabin terbuka — 2026-10-27
 
 Denah dipindahkan menjadi section penuh setelah interior dan spesifikasi pada semua halaman detail armada. Panel gambar dan informasi sejajar pada desktop/tablet, lalu bertumpuk pada ponsel. Diagram SVG menampilkan kursi, sopir, akses samping, lorong, dan area bagasi; data ringkas serta ilustrasi koper berada di panel pendamping. Tab “Denah & bagasi” langsung menuju section. Tidak ada accordion, pemesanan kursi, atau interaksi yang menyiratkan ketersediaan unit aktual. Konfigurasi tetap diberi label contoh untuk prototipe.
+
+## Footer compact dengan ikon kontak — 2026-10-27
+
+Footer tetap navy, dengan identitas merek, navigasi, dan peta dalam tiga kolom pada desktop. Di ponsel, logo dan tiga ikon kontak sejajar sebelum navigasi dan peta. Instagram memakai akun yang diberikan pengguna: `sewahiacebandung.id_`. Telepon dan WhatsApp menjadi ikon berlabel aksesibel dengan target sentuh 44px. Sesuai revisi pengguna, judul lokasi, tautan alamat dan disclosure peta dihapus; iframe peta langsung terlihat dengan lazy loading.
