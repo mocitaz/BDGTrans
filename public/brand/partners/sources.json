@@ -1,0 +1,92 @@
+[
+  {
+    "id": "kemenkeu",
+    "url": "https://media.kemenkeu.go.id/getmedia/41d22bd3-d976-452f-9afc-6a6f98ead43a/logo-kementerian-keuangan-356.png",
+    "bytes": 92058,
+    "ok": true
+  },
+  {
+    "id": "telkom",
+    "url": "https://www.telkom.co.id/images/logo_horizontal.svg",
+    "bytes": 58548,
+    "ok": true
+  },
+  {
+    "id": "dispora",
+    "url": "https://dispora.bandung.go.id/favicon/apple-icon-180x180.png",
+    "bytes": 13794,
+    "ok": true
+  },
+  {
+    "id": "pertamina",
+    "url": "https://www.pertamina.com/file/files/2025/02/pertamina-logo.svg",
+    "bytes": 3366,
+    "ok": true
+  },
+  {
+    "id": "kai",
+    "url": "https://www.kai.id/icons/apple-touch-icon-light.png",
+    "bytes": 11353,
+    "ok": true
+  },
+  {
+    "id": "pos",
+    "url": "https://admin-piol.posindonesia.co.id/media/logo-posind-dark-1.png",
+    "bytes": 22872,
+    "ok": true
+  },
+  {
+    "id": "mandiri",
+    "url": "https://www.bankmandiri.co.id/image/layout_set_logo?img_id=31567&t=1786724452677",
+    "bytes": 12152,
+    "ok": true
+  },
+  {
+    "id": "itb",
+    "url": "https://itb.ac.id/assets/images/Logo%20ITB_COLOR_2026@4x.png",
+    "bytes": 181843,
+    "ok": true
+  },
+  {
+    "id": "bps",
+    "url": "https://www.bps.go.id/assets/logo-bps.png",
+    "bytes": 4534,
+    "ok": true
+  },
+  {
+    "id": "it-telu",
+    "url": "https://telkomuniversity.ac.id/wp-content/uploads/2022/02/logo3-e1511767184374.png",
+    "bytes": 2031,
+    "ok": true
+  },
+  {
+    "id": "polban",
+    "url": "https://www.polban.ac.id/wp-content/uploads/2021/11/MASTER-LOGO-POLBAN-SMALL-400x400.png",
+    "bytes": 55043,
+    "ok": true
+  },
+  {
+    "id": "disdik-jabar",
+    "url": "https://disdik.jabarprov.go.id/apple-touch-icon.png",
+    "ok": true,
+    "bytes": 15086
+  },
+  {
+    "id": "unpar",
+    "url": "https://unpar.ac.id/wp-content/uploads/2023/03/FA-Logo-Berwarna-Unpar.png",
+    "ok": true,
+    "bytes": 73288
+  },
+  {
+    "id": "telkomsel",
+    "url": "https://assets.telkomsel.com/public/telkomsel-logo-melayani-sepenuh-hati-red-new.png?VersionId=VCZ8DD7Pbv9DRkzP6yaya_q3kzTLSKat",
+    "ok": true,
+    "bytes": 19500
+  },
+  {
+    "id": "ojk",
+    "url": "https://www.bankbjb.co.id/dist/img/ojk.png",
+    "ok": true,
+    "bytes": 8003
+  }
+]

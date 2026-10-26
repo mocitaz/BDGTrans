@@ -1,0 +1,9 @@
+.git
+artifacts
+playwright-report
+test-results
+coverage
+docs
+tests
+.DS_Store
+*.tsbuildinfo
