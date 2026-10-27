@@ -1,17 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowUpRight,
-  MessageCircle,
-  MapPinned,
-  BriefcaseBusiness,
-  Plane,
-  Users,
-  Info,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowUpRight, MessageCircle, Info, ChevronRight } from "lucide-react";
 import { fleet, fleetContent } from "@/constants/fleet";
-import { services } from "@/constants/services";
 import { destinations } from "@/constants/destinations";
 import { faq } from "@/constants/faq";
 import { testimonials } from "@/constants/testimonials";
@@ -35,61 +24,6 @@ export function Fleet() {
           {fleet.map((item, index) => (
             <FleetCard key={item.slug} item={item} index={index} />
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-const serviceIcons = {
-  wisata: MapPinned,
-  dinas: BriefcaseBusiness,
-  bandara: Plane,
-  keluarga: Users,
-};
-export function Services() {
-  return (
-    <section
-      id="layanan"
-      className="section services-section"
-      aria-labelledby="services-heading"
-    >
-      <div className="container services-layout">
-        <div className="services-heading" data-reveal="up">
-          <p>LAYANAN KAMI</p>
-          <h2 id="services-heading">Siap Temani Segala Momen.</h2>
-          <a href={adminChat} className="services-contact">
-            <MessageCircle size={16} /> Konsultasi via WhatsApp{" "}
-            <ArrowUpRight size={15} />
-          </a>
-        </div>
-        <div className="services-grid">
-          {services.map((item, index) => {
-            const Icon = serviceIcons[item.id];
-            return (
-              <article
-                key={item.id}
-                className="service-card"
-                data-reveal="up"
-                data-reveal-delay={(index % 2) * 80}
-              >
-                <Link
-                  href={`/?jenis=${item.id}#reservasi`}
-                  className="service-card-link"
-                >
-                  <span className="service-icon" aria-hidden="true">
-                    <Icon size={30} strokeWidth={1.5} />
-                  </span>
-                  <div className="service-copy">
-                    <h3 className="service-title">{item.title}</h3>
-                    <p className="service-description">{item.description}</p>
-                  </div>
-                  <span className="service-arrow" aria-hidden="true">
-                    <ArrowUpRight size={19} />
-                  </span>
-                </Link>
-              </article>
-            );
-          })}
         </div>
       </div>
     </section>

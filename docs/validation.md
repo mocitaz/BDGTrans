@@ -237,3 +237,7 @@ The redesigned cabin guide is always visible on all five vehicle detail pages. B
 Final validation passed: ESLint, TypeScript, Prettier, 73 unit tests, production build, all 29 Playwright tests (1.1m), and npm audit (0 vulnerabilities). Next.js still emits an informational Google Sans fallback-metrics warning; the production build succeeds. No actual WhatsApp messages are sent by tests.
 
 Node.js is pinned to 24.x for Vercel, with framework/install/build settings and a deployment guide. The prototype remains noindex by default. Local environment files, dependency/build caches, raw screenshots, performance reports and asset backups are excluded from the initial Git upload. A staged-file scan found no private keys or common GitHub/AWS/live-secret patterns and no individual file above 10MB. These local checks do not claim a Vercel deployment has been performed.
+
+## Visual reasons and integrated services — 2026-10-27
+
+Lint, formatting, TypeScript and production build passed. Eight targeted browser tests passed (28.6s): five responsive/axe widths, reduced-motion behavior, navigation/contact destinations, and all fleet/service form-prefill links. Visually inspected the combined section at 320/390/768/1440px; there is one `#layanan` anchor and no horizontal overflow. All three local WebP images decode and lazy load. Their total source payload is 476,638 bytes before Next Image responsive derivatives. The build retains the existing informational Google Sans fallback-metrics warning.

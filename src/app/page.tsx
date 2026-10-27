@@ -2,14 +2,10 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { StickyMobileCTA } from "@/components/layout/sticky-mobile-cta";
 import { Hero, About } from "@/components/sections/above-fold";
-import {
-  Fleet,
-  Services,
-  Benefits,
-  FAQ,
-} from "@/components/sections/content-sections";
+import { Fleet, Benefits, FAQ } from "@/components/sections/content-sections";
 import { ReservationSection } from "@/components/reservation/reservation-section";
 import { LandingMotion } from "@/components/layout/landing-motion";
+import { WhyBDG } from "@/components/sections/why-bdg";
 import { metadataFor, siteUrl } from "@/lib/seo";
 export const metadata = {
   ...metadataFor("BDG TRANS | Sewa Hiace & Rental Kendaraan Bandung", "/"),
@@ -47,7 +43,7 @@ export default function Home() {
         <Hero />
         <About />
         <Fleet />
-        <Services />
+        <WhyBDG />
         <Benefits />
         <ReservationSection />
         <FAQ />

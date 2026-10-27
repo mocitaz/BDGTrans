@@ -187,3 +187,9 @@ Denah dipindahkan menjadi section penuh setelah interior dan spesifikasi pada se
 ## Footer compact dengan ikon kontak — 2026-10-27
 
 Footer tetap navy, dengan identitas merek, navigasi, dan peta dalam tiga kolom pada desktop. Di ponsel, logo dan tiga ikon kontak sejajar sebelum navigasi dan peta. Instagram memakai akun yang diberikan pengguna: `sewahiacebandung.id_`. Telepon dan WhatsApp menjadi ikon berlabel aksesibel dengan target sentuh 44px. Sesuai revisi pengguna, judul lokasi, tautan alamat dan disclosure peta dihapus; iframe peta langsung terlihat dengan lazy loading.
+
+## Kenapa BDG TRANS dan layanan terpadu — 2026-10-27
+
+Satu section setelah Pilihan Armada menggantikan section layanan terpisah. Satu judul utama membawahi tiga foto bergaya editorial: kabin, pilihan kendaraan, dan persiapan bagasi. Desktop memakai satu foto utama dan dua pendamping; ponsel memakai foto utama lebar dengan dua pendamping berdampingan. Caption pendek tetap di bawah gambar agar foto bersih dan teks terbaca tanpa overlay.
+
+Empat tautan layanan tampil sebagai satu baris di desktop dan dua kolom di HP, tanpa deskripsi berulang. Anchor `#layanan` tetap ada, dan parameter `jenis` tetap mengisi formulir. Seluruh gambar dimuat lazy, mendukung aturan anti-drag global, dan tidak menambah klaim kapasitas atau fasilitas. Aset dan prompt lengkap tercatat di `docs/why-bdg-assets.md`.
