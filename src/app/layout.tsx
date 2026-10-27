@@ -5,6 +5,7 @@ import "./travel-planner.css";
 import { siteUrl } from "@/lib/seo";
 import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
 import { PrototypeNotice } from "@/components/layout/prototype-notice";
+import { ImageInteractionGuard } from "@/components/layout/image-interaction-guard";
 const googleSans = Google_Sans({
   subsets: ["latin"],
   weight: "variable",
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="id" className={googleSans.variable}>
       <body>
+        <ImageInteractionGuard />
         <a className="skip-link" href="#main">
           Lewati ke konten
         </a>
