@@ -37,7 +37,7 @@ test("mobile vertical scroll advances all fleet cards and releases the next sect
     await page.evaluate(
       ({ start, distance, index }) =>
         window.scrollTo({
-          top: start + (distance * index) / 4,
+          top: start + (distance * (index - 0.12)) / 4,
           behavior: "instant",
         }),
       { ...geometry, index },
@@ -45,6 +45,15 @@ test("mobile vertical scroll advances all fleet cards and releases the next sect
     await expect(page.locator(".fleet-scroll-count")).toHaveText(
       `${index + 1} / 5`,
     );
+    await expect
+      .poll(async () => {
+        const bounds = await section
+          .locator(".fleet-card")
+          .nth(index)
+          .boundingBox();
+        return Math.abs(bounds!.x - 20);
+      })
+      .toBeLessThan(2);
     const card = await section.locator(".fleet-card").nth(index).boundingBox();
     expect(card!.x).toBeGreaterThanOrEqual(18);
     expect(card!.x + card!.width).toBeLessThanOrEqual(372);

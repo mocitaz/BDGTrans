@@ -38,8 +38,9 @@ export function FleetScroll({
         0,
         Math.min(1, (top - section.getBoundingClientRect().top) / distance),
       );
-      track.style.transform = `translate3d(${-progress * distance}px, 0, 0)`;
-      setCurrent(Math.round(progress * (count - 1)));
+      const index = Math.round(progress * (count - 1));
+      track.style.transform = `translate3d(${-(index * distance) / (count - 1)}px, 0, 0)`;
+      setCurrent(index);
     };
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(update);

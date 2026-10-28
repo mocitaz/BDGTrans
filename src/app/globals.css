@@ -4065,11 +4065,12 @@ p {
     margin-bottom: 16px;
   }
   .fleet-section[data-mobile-rail="true"] .fleet-heading p {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.5;
   }
   .fleet-section[data-mobile-rail="true"] .fleet-viewport {
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
     border-radius: 16px;
@@ -4079,11 +4080,13 @@ p {
   }
   .fleet-section[data-pinned="true"] .fleet-viewport {
     overflow: clip;
+    scroll-snap-type: none;
     overscroll-behavior: auto;
     touch-action: pan-y pinch-zoom;
   }
   .fleet-section[data-pinned="true"] .fleet-grid {
     will-change: transform;
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   .fleet-section[data-mobile-rail="true"] .fleet-grid {
     flex-wrap: nowrap;
@@ -4094,16 +4097,22 @@ p {
     flex: 0 0 100%;
     max-width: none;
     margin: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
   .fleet-section[data-mobile-rail="true"] .fleet-card-visual {
-    height: clamp(150px, 24svh, 210px);
+    height: clamp(170px, 28svh, 240px);
   }
   .fleet-section[data-mobile-rail="true"] .fleet-card .fleet-photo {
     top: 10px;
     height: calc(100% - 48px);
   }
   .fleet-section[data-mobile-rail="true"] .fleet-card .fleet-content {
-    padding: 16px;
+    padding: 18px;
+  }
+  .fleet-section[data-mobile-rail="true"] .fleet-card:hover {
+    transform: none;
+    box-shadow: none;
   }
   .fleet-section[data-mobile-rail="true"] .fleet-card .fleet-content h3 {
     font-size: 18px;

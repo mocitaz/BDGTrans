@@ -247,3 +247,7 @@ Lint, formatting, TypeScript and production build passed. Eight targeted browser
 Production build, lint, TypeScript, formatting, 73 unit tests and all 31 browser tests passed (1.1m). Two new browser tests cover vertical wheel input advancing all five cards, in-viewport quote buttons, previous/next controls, keyboard focus bringing an offscreen card into view, release to the next section, quote prefill, viewport resizing, short-screen fallback, reduced motion and desktop restoration. Existing responsive/axe coverage remains green.
 
 A separate Chromium mobile-emulation check used native CDP touchStart/touchMove/touchEnd events over the card: vertical page position advanced from 1697 to 2103 and the track moved horizontally by 406px to card 2. This is browser touch emulation, not a physical-device test. Phone screenshots were inspected with header, progress controls and bottom CTA visible. Existing informational Google Sans fallback-metrics build warning remains.
+
+## Aligned mobile fleet cards — 2026-10-28
+
+Browser regression now stops vertical scrolling at fractional card intervals and waits for the active card's left edge to settle at 20px before verifying its buttons remain in bounds. Seven targeted scroll/responsive/axe tests passed. Visual checks at 390 and 430px confirm complete cards and equal side gutters. Lint, TypeScript and production build passed; existing Google Sans informational warning remains.
