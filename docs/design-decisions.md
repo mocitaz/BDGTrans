@@ -193,3 +193,9 @@ Footer tetap navy, dengan identitas merek, navigasi, dan peta dalam tiga kolom p
 Satu section setelah Pilihan Armada menggantikan section layanan terpisah. Satu judul utama membawahi tiga foto bergaya editorial: kabin, pilihan kendaraan, dan persiapan bagasi. Desktop memakai satu foto utama dan dua pendamping; ponsel memakai foto utama lebar dengan dua pendamping berdampingan. Caption pendek tetap di bawah gambar agar foto bersih dan teks terbaca tanpa overlay.
 
 Empat tautan layanan tampil sebagai satu baris di desktop dan dua kolom di HP, tanpa deskripsi berulang. Anchor `#layanan` tetap ada, dan parameter `jenis` tetap mengisi formulir. Seluruh gambar dimuat lazy, mendukung aturan anti-drag global, dan tidak menambah klaim kapasitas atau fasilitas. Aset dan prompt lengkap tercatat di `docs/why-bdg-assets.md`.
+
+## Pilihan Armada: scroll vertikal ke horizontal di HP — 2026-10-28
+
+Di layar sampai 639px, section menahan satu kartu di bawah header sementara scroll vertikal menggerakkan baris lima kendaraan ke samping. Pergerakan mengikuti posisi halaman melalui transform dengan listener pasif dan requestAnimationFrame, tanpa mencegat touch/wheel atau mengunci body. Setelah kartu terakhir, halaman berjalan normal ke section berikutnya. Counter dan tombol panah memberikan posisi serta akses alternatif; fokus keyboard pada tautan kartu membawa kartu tersebut ke layar.
+
+Area klip memakai overflow:clip ketika pinned agar tidak membentuk scroll container bersarang yang menahan gestur vertikal. Tinggi section dihitung dari tinggi konten dan jarak geser, diperbarui saat ukuran layar/header berubah. Kartu dibuat lebih compact agar tombol tidak tertutup CTA bawah. Desktop tetap berupa grid; reduced motion memakai daftar normal; viewport pendek yang tidak cukup memuat seluruh kartu memakai rail horizontal biasa. Seluruh listener, observer dan animation frame dibersihkan saat unmount.

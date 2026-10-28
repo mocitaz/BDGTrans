@@ -5,28 +5,25 @@ import { destinations } from "@/constants/destinations";
 import { faq } from "@/constants/faq";
 import { testimonials } from "@/constants/testimonials";
 import { FleetCard } from "@/components/fleet/fleet-card";
+import { FleetScroll } from "@/components/fleet/fleet-scroll";
 import { Accordion } from "@/components/ui/accordion";
 import { buttonVariants } from "@/components/ui/button";
 import { adminChat } from "@/lib/whatsapp";
 export function Fleet() {
   return (
-    <section
-      id="armada"
-      className="section muted-bg fleet-section"
-      aria-labelledby="fleet-heading"
-    >
-      <div className="container">
+    <FleetScroll
+      count={fleet.length}
+      heading={
         <div className="fleet-heading" data-reveal="up">
           <h2 id="fleet-heading">{fleetContent.title}</h2>
           <p>{fleetContent.intro}</p>
         </div>
-        <div className="fleet-grid">
-          {fleet.map((item, index) => (
-            <FleetCard key={item.slug} item={item} index={index} />
-          ))}
-        </div>
-      </div>
-    </section>
+      }
+    >
+      {fleet.map((item, index) => (
+        <FleetCard key={item.slug} item={item} index={index} />
+      ))}
+    </FleetScroll>
   );
 }
 export function Benefits() {

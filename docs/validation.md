@@ -241,3 +241,9 @@ Node.js is pinned to 24.x for Vercel, with framework/install/build settings and 
 ## Visual reasons and integrated services — 2026-10-27
 
 Lint, formatting, TypeScript and production build passed. Eight targeted browser tests passed (28.6s): five responsive/axe widths, reduced-motion behavior, navigation/contact destinations, and all fleet/service form-prefill links. Visually inspected the combined section at 320/390/768/1440px; there is one `#layanan` anchor and no horizontal overflow. All three local WebP images decode and lazy load. Their total source payload is 476,638 bytes before Next Image responsive derivatives. The build retains the existing informational Google Sans fallback-metrics warning.
+
+## Mobile fleet scroll — 2026-10-28
+
+Production build, lint, TypeScript, formatting, 73 unit tests and all 31 browser tests passed (1.1m). Two new browser tests cover vertical wheel input advancing all five cards, in-viewport quote buttons, previous/next controls, keyboard focus bringing an offscreen card into view, release to the next section, quote prefill, viewport resizing, short-screen fallback, reduced motion and desktop restoration. Existing responsive/axe coverage remains green.
+
+A separate Chromium mobile-emulation check used native CDP touchStart/touchMove/touchEnd events over the card: vertical page position advanced from 1697 to 2103 and the track moved horizontally by 406px to card 2. This is browser touch emulation, not a physical-device test. Phone screenshots were inspected with header, progress controls and bottom CTA visible. Existing informational Google Sans fallback-metrics build warning remains.
